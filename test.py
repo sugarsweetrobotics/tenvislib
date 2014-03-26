@@ -3,4 +3,5 @@ from tenvis import *
 
 if __name__ == '__main__':
     print 'Starting Tenvis Test'
-    t = Tenvis('192.168.1.200:7777', '', 'admin', 'admin')
+    t = Tenvis('192.168.1.200', 7777, 'admin', 'admin')
+    t.get_status()

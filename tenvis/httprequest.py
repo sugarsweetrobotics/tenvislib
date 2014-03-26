@@ -10,7 +10,6 @@ class Request():
 
 
 def request(host, url, username, password, message=''):
-    url = "/get_status.cgi"
     # base64 encode the username and password
     auth = base64.encodestring('%s:%s' % (username, password)).replace('\n', '')
     webservice = httplib.HTTP(host)
@@ -27,3 +26,11 @@ def request(host, url, username, password, message=''):
     webservice.send(message)
     return webservice
     # get the response
+
+def get(host, url, username, password):
+    auth = base64.encodestring('%s:%s' % (username, password)).replace('\n', '')
+    webservice = httplib.HTTP(host)
+    webservice.putrequest('GET', url)
+    webservice.putheader('Authorization', 'Basic %s' % auth)
+    h.endheaders()
+    

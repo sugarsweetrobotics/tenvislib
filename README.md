@@ -16,6 +16,11 @@ This library helps to control TENVIS low-cost network camera.
 ## This depends on
  Python Imaging Library (PIL)
 
+## Install
+```python
+$ sudo python setup.py install
+```
+
 ## Example
 
 ```python

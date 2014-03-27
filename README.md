@@ -5,6 +5,8 @@ Tenvis Low-cost Pan-Tilt Network Camera Library for Python
 
 This library helps to control TENVIS low-cost network camera.
 
+TENVIS: http://www.tenvis.com
+
 ## This allows
  1. change resolution
  2. change brightness / contrast

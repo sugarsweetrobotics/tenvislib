@@ -23,7 +23,8 @@ def request(host, url, username, password, message=''):
     webservice.putheader("Authorization", "Basic %s" % auth)
  
     webservice.endheaders()
-    webservice.send(message)
+    if len(message) > 0:
+        webservice.send(message)
     return webservice
     # get the response
 

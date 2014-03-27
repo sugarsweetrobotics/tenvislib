@@ -32,5 +32,15 @@ def get(host, url, username, password):
     webservice = httplib.HTTP(host)
     webservice.putrequest('GET', url)
     webservice.putheader('Authorization', 'Basic %s' % auth)
-    h.endheaders()
+    webservice.endheaders()
     
+def set(host, url, username, password, param, value):
+    auth = base64.encodestring('%s:%s' % (username, password)).replace('\n', '')
+    webservice = httplib.HTTP(host)
+
+    full_url = url + '?param=%s&value=%s' % (param, value)
+    webservice.putrequest('POST', full_url)
+    webservice.putheader('Authorization', 'Basic %s' % auth)
+    webservice.endheaders()
+    #webservice.send(message)
+    return webservice
